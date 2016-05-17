@@ -1,0 +1,21 @@
+{
+  "name": "<%- name %>",
+  "author": "<%- author %>",
+  "version": "<%- version %>",
+  "description": "<%- description %>",
+  "repository": {
+    "type": "git",
+    "url": "<%- repository %>"
+  },
+  "scripts": {
+    "start": "nowa server",
+    "build": "nowa build"
+  },
+  "homepage": "<%- homepage %>",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "~2.1.2",
+    "i18n-helper": "~1.1.1",
+    "react-mixin": "~1.7.0"
+  }
+}

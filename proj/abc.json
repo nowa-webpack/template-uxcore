@@ -1,0 +1,17 @@
+{
+    "name": "<%- name %>",
+    "builder": "@ali/builder-alinw",
+    "options": {
+        "type": "uxcore",
+        "template": "<%- template %>",
+        "pages": true<% if (library) { %>,
+        "libraries": {
+            "Uxcore": {
+                "output": "uxcore.js",
+                "mappings": {
+                    "Button": "uxcore-button@~0.4.0"
+                }
+            }
+        }<% } %>
+    }
+}
