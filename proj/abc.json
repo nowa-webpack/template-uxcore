@@ -4,6 +4,13 @@
     "options": {
         "type": "uxcore",
         "template": "<%- template %>",
+        "vars": {
+            "locale": "zh-cn",
+            "__LOCAL__": true
+        },
+        "buildvars": {
+            "locale": [ "zh-cn", "en" ]
+        },
         "pages": true<% if (library) { %>,
         "libraries": {
             "Uxcore": {
