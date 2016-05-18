@@ -4,6 +4,7 @@
     "options": {
         "type": "uxcore",
         "template": "<%- template %>",
+        "npm": "<%- npm %>",
         "vars": {
             "locale": "zh-cn",
             "__LOCAL__": true
