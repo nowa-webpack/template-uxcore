@@ -7,7 +7,7 @@ let i18n = require('i18n');
 let Actions = require('./actions');
 let Store = require('./store');
 
-class Page extends React.Component {
+class PageDemo extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,15 +25,15 @@ class Page extends React.Component {
     render() {
         let me = this;
         return (
-            <div className="mPageDemo">
+            <div className="page-demo">
                 demo{i18n('page1.demo')}
             </div>
         );
     }
 }
 
-reactMixin.onClass(Page, Reflux.connect(Store));
+reactMixin.onClass(PageDemo, Reflux.connect(Store));
 
-ReactDOM.render(<Page/>, document.getElementById('App'));
+ReactDOM.render(<PageDemo/>, document.getElementById('App'));
 
-module.exports = Page;
+module.exports = PageDemo;
