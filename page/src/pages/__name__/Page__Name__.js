@@ -34,9 +34,6 @@ class <%- Name %> extends React.Component {
     componentWillMount() {
     }
 
-    componentDidMount() {
-    }
-
     componentWillReceiveProps(nextProps) {
     }
 
