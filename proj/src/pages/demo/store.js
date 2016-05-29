@@ -1,18 +1,29 @@
-var Actions = require('./actions');
+const Actions = require('./actions');
 
-var Store = Reflux.createStore({
+const DB = require('../../app/db');
+
+module.exports = Reflux.createStore({
     listenables: [Actions],
     data: {
-        loaded: false
+        loaded: false,
+        content: {},
+        error: false
     },
 
     onFetch: function(params, cb) {
         var t = this;
-        setTimeout(function() {
+        DB.SomeModuleAPI.getSomeInfo(params)
+        .then(function(content) {
             t.data.loaded = true;
+            t.data.content = content;
             t.updateComponent();
             cb && cb(t.data);
-        }, 0);
+        })
+        .catch(function(error) {
+            t.data.error = error;
+            t.updateComponent();
+            cb && cb(t.data);
+        });
     },
 
     updateComponent: function() {
@@ -23,5 +34,3 @@ var Store = Reflux.createStore({
         return this.data;
     }
 });
-
-module.exports = Store;
