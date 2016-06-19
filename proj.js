@@ -11,3 +11,9 @@ exports.prompts = [
     message: 'Do you want i18n feature?'
   }
 ];
+
+exports.filter = function(source, data) {
+  if (!data.i18n) {
+    return !/i18n/.test(source);
+  }
+};
