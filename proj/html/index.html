@@ -27,11 +27,16 @@
 <script src="//alinw.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js"></script>
 <% } %>
 </head>
-<body class="zh-cn">
+<body<% if (i18n) { %> class="zh-cn"<% } %>>
 <div id="App"></div>
-
+<% if (i18n) { %>
 <!-- 项目脚本资源加载 -->
 <script src="./app-zh-cn.js"></script>
 <script src="./demo-zh-cn.js"></script>
+<% } else { %>
+<!-- 项目脚本资源加载 -->
+<script src="./app.js"></script>
+<script src="./demo.js"></script>
+<% } %>
 </body>
 </html>

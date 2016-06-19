@@ -6,12 +6,12 @@
         "template": "<%- template %>",
         "npm": "<%- npm %>",
         "vars": {
-            "locale": "zh-cn",
-            "__LOCAL__": true
-        },
+            <% if (i18n) { %>"locale": "zh-cn",
+            <% } %>"__LOCAL__": true
+        }<% if (i18n) { %>,
         "buildvars": {
             "locale": [ "zh-cn", "en" ]
-        },
+        }<% } %>,
         "pages": true<% if (library) { %>,
         "libraries": {
             "Uxcore": {

@@ -1,9 +1,9 @@
 require('./PageDemo.less');
 
 const reactMixin = require('react-mixin');
-
+<% if (i18n) { %>
 const i18n = require('i18n');
-
+<% } %>
 const Actions = require('./actions');
 const Store = require('./store');
 

@@ -179,8 +179,8 @@ Uxcore 组件库请参考[这里](http://uxco.re/)。
 
 ### 定制 Uxcore
 
-可通过在 abc.json 中增加相应配置来定制项目所需的 Uxcore，详见 [nowa-lib 插件](https://www.npmjs.com/package/nowa-lib)。
-
+可通过在 abc.json 中增加相应配置来定制项目所需的 Uxcore，详见 [组件库的定制构建](http://nowa-webpack.github.io/docs/zu_jian_ku_de_ding_zhi_gou_jian.html)。
+<% if (i18n) { %>
 ## 国际化解决方案
 
 `src/i18n` 目录为国际化文案资源文件存放目录，其中除了 `index.js` 之外的文件均为国际化语言资源文件。
@@ -205,7 +205,7 @@ i18n("key"[, argv1[, argv2...]])
   - 全局公用资源：global.xxx
   - 模块所属资源：moduleName.xxx
   - 页面所属资源：pageName.xxx
-
+<% } %>
 ## 项目中使用图标（或图片）
 
 ### 使用图标（svg）

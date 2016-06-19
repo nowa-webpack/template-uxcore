@@ -1,11 +1,11 @@
 require('./Page<%- Name %>.less');
-
+<% if (store) { %>
 const reactMixin = require('react-mixin');
-
-const i18n = require('i18n');
 
 const Actions = require('./actions');
 const Store = require('./store');
+<% } %>
+const i18n = require('i18n');
 
 class <%- Name %> extends React.Component {
 
@@ -13,12 +13,6 @@ class <%- Name %> extends React.Component {
         super(props);
         this.state = {
         };
-    }
-
-    componentDidMount() {
-        Actions.fetch({}, function(data) {
-            console.log(data);
-        });
     }
 
     render() {
@@ -30,6 +24,9 @@ class <%- Name %> extends React.Component {
     }
 
     componentWillMount() {
+    }
+
+    componentDidMount() {
     }
 
     componentWillReceiveProps(nextProps) {
@@ -48,9 +45,9 @@ class <%- Name %> extends React.Component {
     componentWillUnmount() {
     }
 }
-
+<% if (store) { %>
 reactMixin.onClass(<%- Name %>, Reflux.connect(Store));
-
+<% } %>
 ReactDOM.render(<<%- Name %>/>, document.getElementById('App'));
 
 module.exports = <%- Name %>;
