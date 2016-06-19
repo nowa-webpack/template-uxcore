@@ -5,8 +5,6 @@ const reactMixin = require('react-mixin');
 const Actions = require('./actions');
 const Store = require('./store');
 <% } %>
-const i18n = require('i18n');
-
 class <%- Name %> extends React.Component {
 
     constructor(props) {
