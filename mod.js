@@ -1,2 +1,2 @@
 // answer for mod
-exports.answers = require('page').answers;
+exports.answers = require('./page').answers;
