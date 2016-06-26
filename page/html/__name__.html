@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="//alinw.alicdn.com/??platform/common/s/1.1/global/global.css,uxcore/uxcore-kuma/2.0.6/orange.min.css">
 
 <!-- 项目样式资源加载 -->
-<link rel="stylesheet" href="./app.css">
-<link rel="stylesheet" href="./<%= name %>.css">
+<link rel="stylesheet" href="/app.css">
+<link rel="stylesheet" href="/<%= name %>.css">
 
 <!-- 外部脚本资源加载 -->
 <!--[if lte IE 9]>
@@ -22,7 +22,7 @@
 <!-- <script src="//alinw.alicdn.com/platform/c/tinymce/4.2.5/tinymce-full.min.js"></script> -->
 <% if (libraries) { %>
 <!-- 项目中订制的 uxcore -->
-<script src="./uxcore.js"></script>
+<script src="/uxcore.js"></script>
 <% } else { %>
 <script src="//alinw.alicdn.com/uxcore/uxcore/0.1.4/uxcore.min.js"></script>
 <% } %>
@@ -31,7 +31,7 @@
 <div id="App"></div>
 
 <!-- 项目脚本资源加载 -->
-<script src="./app<%= suffix %>.js"></script>
-<script src="./<%= name %><%= suffix %>.js"></script>
+<script src="/app<%= suffix %>.js"></script>
+<script src="/<%= name %><%= suffix %>.js"></script>
 </body>
 </html>
