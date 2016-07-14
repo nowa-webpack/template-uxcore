@@ -1,6 +1,5 @@
 {
     "name": "<%- name %>",
-    "builder": "@ali/builder-alinw",
     "options": {
         "type": "uxcore",
         "template": "<%- template %>",
