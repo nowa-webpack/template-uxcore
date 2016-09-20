@@ -51,7 +51,7 @@ class PageDemo extends React.Component {
     }
 }
 
-reactMixin.onClass(PageDemo, Reflux.connect(Store));
+reactMixin.onClass(PageDemo, Reflux.connect(Store, 'demo'));
 
 ReactDOM.render(<PageDemo/>, document.getElementById('App'));
 
