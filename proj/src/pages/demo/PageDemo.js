@@ -7,7 +7,7 @@ const i18n = require('i18n');
 const Actions = require('./actions');
 const Store = require('./store');
 
-const { Table } = Uxcore;
+const Table = require('uxcore/lib/Table');
 
 class PageDemo extends React.Component {
 

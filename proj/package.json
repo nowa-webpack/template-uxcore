@@ -16,6 +16,7 @@
   "dependencies": {
     "classnames": "~2.1.2",
     "i18n-helper": "~1.1.1",
-    "react-mixin": "~1.7.0"
+    "react-mixin": "~1.7.0",
+    "uxcore": "~0.4.1"
   }
 }
