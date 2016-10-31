@@ -1,25 +1,28 @@
-const Actions = require('./actions');
+import Actions from './actions';
 
-const DB = require('../../app/db');
+export default class <%- Name %>Store extends Reflux.Store {
+  constructor() {
+    super();
+    this.listenables = Actions;
+    this.state = {};
+  }
 
-module.exports = Reflux.createStore({
-    listenables: [Actions],
-    data: {
-        loaded: false
-    },
+  onUpdateState(obj) {
+    this.setState(obj);
+  }
 
-    onFetch: function(params, cb) {
-        let t = this;
-        t.data.loaded = true;
-        t.updateComponent();
-        cb && cb(t.data);
-    },
+  onSearch(content) {
+  }
 
-    updateComponent: function() {
-        this.trigger(this.data);
-    },
+  onSearchCompleted(content) {
+    this.setState({ content });
+  }
 
-    getInitialState: function() {
-        return this.data;
-    }
-});
+  onSearchFailed(error) {
+    this.setState({ error });
+  }
+
+  static get id() {
+    return '<%- Name %>Store'
+  }
+}

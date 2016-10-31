@@ -7,6 +7,11 @@ exports.prompts = [
     default: false,
   },
   {
+    name: 'SPA',
+    type: 'confirm',
+    message: 'Do you want SPA feature?'
+  },
+  {
     name: 'i18n',
     type: 'confirm',
     message: 'Do you want i18n feature?'
@@ -14,7 +19,12 @@ exports.prompts = [
 ];
 
 exports.filter = function(source, data) {
-  if (!data.i18n) {
-    return !/i18n/.test(source);
+  var flag = true;
+  if(!data.SPA) {
+    flag = !/routes|error/.test(source);
   }
+  if (flag !== false && !data.i18n) {
+    flag = !/i18n/.test(source);
+  }
+  return flag ;
 };

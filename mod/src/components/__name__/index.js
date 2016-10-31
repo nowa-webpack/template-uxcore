@@ -1,1 +1,1 @@
-module.exports = require('./<%- Name %>');
+export default from './<%- Name %>';

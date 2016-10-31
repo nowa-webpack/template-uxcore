@@ -16,7 +16,7 @@
   "dependencies": {
     "classnames": "~2.1.2",
     "i18n-helper": "~1.1.1",
-    "react-mixin": "~1.7.0",
-    "uxcore": "~0.4.1"
+    "reflux-promise": "^1.0.4",
+    "uxcore": "~0.4.2"
   }
 }

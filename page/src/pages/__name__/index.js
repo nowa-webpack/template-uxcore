@@ -1,1 +1,1 @@
-module.exports = require('./Page<%- Name %>');
+export default from './Page<%- Name %>';

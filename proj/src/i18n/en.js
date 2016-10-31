@@ -4,8 +4,8 @@
  * - 模块所属资源：moduleName.xxx
  * - 页面所属资源：pageName.xxx
  */
-'use strict';
+
 
 module.exports = {
-    'page1.demo': 'DEMO'
+  'page1.demo': 'DEMO',
 };

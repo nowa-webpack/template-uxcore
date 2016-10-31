@@ -1,58 +1,50 @@
-require('./PageDemo.less');
+import './PageDemo.less';
 
-const reactMixin = require('react-mixin');
+import Actions from './single-action';
+import Store from './store';
+import classnames from 'classnames';
 <% if (i18n) { %>
-const i18n = require('i18n');
+import i18n from 'i18n';
 <% } %>
-const Actions = require('./actions');
-const Store = require('./store');
 
-const Table = require('uxcore/lib/Table');
+import SearchWord from '../../components/search-word';
+import SearchData from '../../components/search-data';
 
-class PageDemo extends React.Component {
+//如果有`Action`和`Store`那么就使用`Reflux.Component`
+//这样可以用`Reflux`管理全部的`state`
+//在这里面改变`state`是不会生效的
+//否则，还是使用`React.Component`
+class PageDemo extends Reflux.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            loaded: false,
-            content: {},
-            error: false
-        };
-    }
+  constructor(props) {
+    super(props);
+    //通过`this.store`建立和`Store`的联系
+    this.store = Store;
 
-    componentDidMount() {
-        Actions.fetch({
-            workNo: '0001'
-        }, function(data) {
-            console.log(data);
-        });
-    }
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-    render() {
-        let renderCell = (cellData, rowData) => {
-            return <span>{cellData}</span>
-        };
-        let tableProps = {
-            width: 900,
-            jsxdata: {
-                data: this.state.content.list
-            },
-            jsxcolumns: [
-                {dataKey: 'workNo', title: '工号', width: 300, render: renderCell},
-                {dataKey: 'name', title: '姓名', width: 300, render: renderCell},
-                {dataKey: 'nickName', title: '昵称', width: 300, render: renderCell}
-            ]
-        };
-        return (
-            <div className="page-demo">
-                <Table {...tableProps}/>
-            </div>
-        );
-    }
+  handleChange(e) {
+    Actions.updateState({workNo: e.target.value});
+  }
+
+  render() {
+    let me = this;
+    let {info, content: {data}, workNo} = me.state;
+
+    return (
+      <div className="page-demo">
+        <input className="kuma-input" onChange={me.handleChange} placeholder="请输入员工工号" />
+        <SearchWord workNo={workNo}/>
+        <SearchData data={data}/>
+      </div>
+    );
+  }
 }
 
-reactMixin.onClass(PageDemo, Reflux.connect(Store, 'demo'));
-
+<% if (SPA) { %>
+export default ReactRouter.withRouter(PageDemo); 
+<% } else { %>
 ReactDOM.render(<PageDemo/>, document.getElementById('App'));
-
-module.exports = PageDemo;
+export default PageDemo; 
+<% } %>

@@ -1,51 +1,50 @@
-require('./Page<%- Name %>.less');
-<% if (store) { %>
-const reactMixin = require('react-mixin');
+import './Page<%- Name %>.less';
 
-const Actions = require('./actions');
-const Store = require('./store');
+import classnames from 'classnames';
+<% if (i18n) { %>
+import i18n from 'i18n';
 <% } %>
-class <%- Name %> extends React.Component {
+<% if (store) { %>
+import Actions from './actions';
+import Store from './store';
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
+class Page<%- Name %> extends Reflux.Component {
 
-    render() {
-        return (
-            <div className="<%= name %>">
-                page <%= name %>
-            </div>
-        );
-    }
+  constructor(props) {
+    super(props);
+    this.store = Store;
+  }
 
-    componentWillMount() {
-    }
+  render() {
+    return (
+      <div className="page-<%= name %>">
+        page <%= name %>
+      </div>
+    );
+  }
 
-    componentDidMount() {
-    }
-
-    componentWillReceiveProps(nextProps) {
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        return true;
-    }
-
-    componentWillUpdate(nextProps, nextState) {
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-    }
-
-    componentWillUnmount() {
-    }
 }
-<% if (store) { %>
-reactMixin.onClass(<%- Name %>, Reflux.connect(Store, '<%- Name %>'));
-<% } %>
-ReactDOM.render(<<%- Name %>/>, document.getElementById('App'));
+<% } else { %>
+class Page<%- Name %> extends React.Component {
 
-module.exports = <%- Name %>;
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="page-<%= name %>">
+        page <%= name %>
+      </div>
+    );
+  }
+}
+
+<% } %>
+
+<% if(SPA){ %>
+export default ReactRouter.withRouter(Page<%- Name %>);
+<% } else {%>
+export default Page<%- Name %>;
+<% } %>

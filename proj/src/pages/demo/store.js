@@ -1,36 +1,44 @@
-const Actions = require('./actions');
+import Actions from './single-action';
 
-const DB = require('../../app/db');
+export default class DemoStore extends Reflux.Store {
+  constructor() {
+    super();
+    this.listenables = Actions;
+    this.state = {
+      content: {},
+      error: false,
+      workNo: '',
+    };
+  }
 
-module.exports = Reflux.createStore({
-    listenables: [Actions],
-    data: {
-        loaded: false,
-        content: {},
-        error: false
-    },
+  onUpdateState(obj) {
+    // 可以这么使`store`的变化同步到`view`
+    // `this.trigger({obj})`;
+    // 或者
+    this.setState(obj);
+  }
 
-    onFetch: function(params, cb) {
-        var t = this;
-        DB.SomeModuleAPI.getSomeInfo(params)
-        .then(function(content) {
-            t.data.loaded = true;
-            t.data.content = content;
-            t.updateComponent();
-            cb && cb(t.data);
-        })
-        .catch(function(error) {
-            t.data.error = error;
-            t.updateComponent();
-            cb && cb(t.data);
-        });
-    },
+  // 处理请求结果（可选）
+  // 无论成功、失败都会调用
+  // 会在请求之前就执行
+  // 并且优先于`Completed`、`Failed`的处理函数执行
+  onSearch(content) {
 
-    updateComponent: function() {
-        this.trigger(this.data);
-    },
+  }
 
-    getInitialState: function() {
-        return this.data;
-    }
-});
+  // 处理请求成功的信息（可选）
+  onSearchCompleted(content) {
+    this.setState({ content });
+  }
+
+  // 处理请求失败的信息（可选）
+  onSearchFailed(error) {
+    this.setState({ error });
+  }
+
+  // 如果在这里指定了key
+  // 那么就可以用`Reflux.GlobalState`这个全局的`state`拿到对应的数据
+  static get id() {
+    return 'DemoStore';
+  }
+}
