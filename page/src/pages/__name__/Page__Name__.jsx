@@ -7,7 +7,7 @@ import './Page<%- Name %>.less';
 import Actions from './actions';
 import Store from './store';
 
-const { Reflux } = window;
+const { Reflux, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
 class Page<%- Name %> extends Reflux.Component {
 
   constructor(props) {
@@ -25,7 +25,7 @@ class Page<%- Name %> extends Reflux.Component {
 
 }
 <% } else { %>
-const { React } = window;
+const { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %>  } = window;
 class Page<%- Name %> extends React.Component {
 
   constructor(props) {

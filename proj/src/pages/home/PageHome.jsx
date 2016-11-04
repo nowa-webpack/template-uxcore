@@ -1,7 +1,7 @@
 import './PageHome.less';
 import { URLS } from '../../app/variables';
 
-cosnt { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
+const { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
 const Table = require('uxcore/lib/Table');
 
 //如果有`Action`和`Store`那么就使用`Reflux.Component`

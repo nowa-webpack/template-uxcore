@@ -8,7 +8,7 @@ import Store from './store';
 import SearchWord from '../../components/search-word';
 import SearchData from '../../components/search-data';
 
-cosnt { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
+const { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
 //如果有`Action`和`Store`那么就使用`Reflux.Component`
 //这样可以用`Reflux`管理全部的`state`
 //在这里面改变`state`是不会生效的
