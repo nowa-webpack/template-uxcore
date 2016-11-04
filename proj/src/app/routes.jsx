@@ -1,4 +1,3 @@
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Menu from 'uxcore/lib/Menu';
 
 const { React, ReactRouter, ReactDOM } = window;
@@ -19,11 +18,11 @@ const App = ({ children, location, routes }) => (
       </Menu.Item>
     </Menu>
     <div className="kuma-container kuma-container-1180">
-      <ReactCSSTransitionGroup transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
+      <React.addons.CSSTransitionGroup transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
         {React.cloneElement(children || 'div', {
           key: location.pathname,
         })}
-      </ReactCSSTransitionGroup>
+      </React.addons.CSSTransitionGroup>
     </div>
   </div>
 );
