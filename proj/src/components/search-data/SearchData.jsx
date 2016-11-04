@@ -2,12 +2,10 @@
 const SearchData = ({ data = [] }) => (
   <div className="mod-search-data">
     <div>
-      <label>匹配的员工:</label>
+      <p><b>匹配的员工:</b></p>
       <div>
         {data.length ?
-          data.map((l, k) => {
-            return (<p key={k}>{`${l.workNo}-${l.name}(${l.nickName})`}</p>);
-          }) :
+          data.map((l, k) => (<p key={k}>{`${l.workNo}-${l.name}(${l.nickName})`}</p>)) :
           (<p>暂无数据</p>)
         }
       </div>

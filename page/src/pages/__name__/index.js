@@ -1,1 +1,1 @@
-export default from './Page<%- Name %>';
+export default from './Page<%- Name %>.jsx';

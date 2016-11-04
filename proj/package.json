@@ -17,6 +17,8 @@
     "classnames": "~2.1.2",
     "i18n-helper": "~1.1.1",
     "reflux-promise": "^1.0.4",
-    "uxcore": "~0.4.2"
+    "uxcore": "~0.4.2",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-pure-render-mixin": "^15.3.2",
   }
 }

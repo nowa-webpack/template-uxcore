@@ -1,6 +1,6 @@
 import './app.less';
 <% if (SPA) { %>
-import './routes';
+import './routes.jsx';
 <% } %>
 
 if (__LOCAL__ && window.chrome && window.chrome.webstore) { // This is a Chrome only hack

@@ -1,13 +1,13 @@
-import './Page<%- Name %>.less';
-
-import classnames from 'classnames';
 <% if (i18n) { %>
 import i18n from 'i18n';
 <% } %>
+import classnames from 'classnames';
+import './Page<%- Name %>.less';
 <% if (store) { %>
 import Actions from './actions';
 import Store from './store';
 
+const { Reflux } = window;
 class Page<%- Name %> extends Reflux.Component {
 
   constructor(props) {
@@ -25,6 +25,7 @@ class Page<%- Name %> extends Reflux.Component {
 
 }
 <% } else { %>
+const { React } = window;
 class Page<%- Name %> extends React.Component {
 
   constructor(props) {
@@ -40,7 +41,6 @@ class Page<%- Name %> extends React.Component {
     );
   }
 }
-
 <% } %>
 
 <% if(SPA){ %>

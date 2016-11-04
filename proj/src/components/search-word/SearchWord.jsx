@@ -1,4 +1,6 @@
-const { PureRenderMixin } = React.addons;
+import PureRenderMixin from 'react-addons-pure-render-mixin';
+
+const { React } = window;
 class SearchWord extends React.Component {
 
   constructor(props) {
@@ -7,16 +9,16 @@ class SearchWord extends React.Component {
   }
 
   render() {
-  const { workNo } = this.props;
-  return (
+    const { workNo } = this.props;
+    return (
       <div className="mod-search-word">
-      {
-        workNo ?
-        (<div>
-          <label>检索词:</label>
-          <div>{workNo}</div>
-        </div>) : null
-      }
+        {
+          workNo ?
+            (<div>
+              <label>检索词:</label>
+              <div>{workNo}</div>
+            </div>) : null
+        }
       </div>
     );
   }

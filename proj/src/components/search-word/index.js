@@ -1,1 +1,1 @@
-export default from './SearchWord';
+export default from './SearchWord.jsx';
