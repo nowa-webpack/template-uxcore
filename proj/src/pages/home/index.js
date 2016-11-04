@@ -1,1 +1,1 @@
-export default from './PageHome';
+export default from './PageHome.jsx';

@@ -1,10 +1,8 @@
 import './PageError.less';
 
+const { React, ReactRouter } = window;
 class PageError extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     const { router } = this.props;
     setTimeout(() => { router.push('/home'); }, 5000);

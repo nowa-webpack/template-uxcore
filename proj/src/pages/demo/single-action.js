@@ -1,7 +1,7 @@
 import DB from '../../app/db';
 // 可以把所有的`action`一起创建
 // 也可以像`./multi-action.js`那样，分开创建
-const User = Reflux.createActions({
+const User = window.Reflux.createActions({
   updateState: {
     // 这里可以修改传递的参数
     // 修改后传给`shouldEmit`
@@ -29,7 +29,7 @@ const User = Reflux.createActions({
 
 // 这里我们可以设置`Action`具体干什么
 User.updateState.listen((params) => {
-    // 这里返回一个`Promise`对象
+  // 这里返回一个`Promise`对象
   User.search(params);
 });
 

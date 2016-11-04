@@ -1,1 +1,1 @@
-export default from './PageError';
+export default from './PageError.jsx';

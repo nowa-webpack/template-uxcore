@@ -1,1 +1,1 @@
-export default from './PageDemo';
+export default from './PageDemo.jsx';

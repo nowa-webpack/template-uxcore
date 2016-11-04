@@ -1,6 +1,7 @@
 import './PageHome.less';
-import {URLS} from '../../app/variables';
+import { URLS } from '../../app/variables';
 
+cosnt { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
 const Table = require('uxcore/lib/Table');
 
 //如果有`Action`和`Store`那么就使用`Reflux.Component`
@@ -21,9 +22,9 @@ class PageHome extends React.Component {
     };
     let tableProps = {
       width: 900,
-      showSearch:true,
+      showSearch: true,
       fetchUrl: URLS.getSomeInfo,
-      beforeFetch(data, from){
+      beforeFetch(data, from) {
         let {currentPage, pageSize, searchTxt} = data;
         return {
           currentPage,
@@ -32,17 +33,17 @@ class PageHome extends React.Component {
         }
 
       },
-      searchBarPlaceholder:'请输入员工工号',
+      searchBarPlaceholder: '请输入员工工号',
       emptyText: '没有查到符合条件的信息',
       jsxcolumns: [
-        {dataKey: 'workNo', title: '工号', width: 300, render: renderCell},
-        {dataKey: 'name', title: '姓名', width: 300, render: renderCell},
-        {dataKey: 'nickName', title: '花名', width: 300, render: renderCell}
+        { dataKey: 'workNo', title: '工号', width: 300, render: renderCell },
+        { dataKey: 'name', title: '姓名', width: 300, render: renderCell },
+        { dataKey: 'nickName', title: '花名', width: 300, render: renderCell }
       ]
     };
     return (
       <div className="page-home">
-        <Table {...tableProps}/>
+        <Table {...tableProps} />
       </div>
     );
   }
@@ -51,7 +52,7 @@ class PageHome extends React.Component {
 <% if (SPA) { %>
 export default ReactRouter.withRouter(PageHome); 
 <% } else { %>
-ReactDOM.render(<PageHome/>, document.getElementById('App'));
+ReactDOM.render(<PageHome />, document.getElementById('App'));
 export default PageHome; 
 <% } %>
 
