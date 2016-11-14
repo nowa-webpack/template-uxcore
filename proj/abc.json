@@ -7,10 +7,11 @@
     "vars": {
       <% if (i18n) { %>"locale": "zh-cn",
       <% } %>"__LOCAL__": true
-    }<% if (i18n) { %>,
+    },
     "buildvars": {
-      "locale": [ "zh-cn", "en" ]
-    }<% } %>,
+      "__LOCAL__": [false]<% if (i18n) { %>,
+      "locale": [ "zh-cn", "en" ]<% } %>
+    },
     "pages": <%= !SPA %>,
     "mockapi": {
       "/mock/query/getSomeInfo.json": "mock/query/getSomeInfo.js"

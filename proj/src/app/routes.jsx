@@ -36,9 +36,10 @@ const homeRoute = {
   // 这里可以给routes里面设置数据
   title: 'home',
   getComponent(nextState, cb) {
+    // `require.ensure`的第三个参数是给生成的模块命名
     require.ensure([], (require) => {
       cb(null, require('../pages/home'));
-    });
+    }, 'home');
   },
 };
 
@@ -48,7 +49,7 @@ const demoRoute = {
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('../pages/demo'));
-    });
+    }, 'demo');
   },
 };
 
@@ -58,7 +59,7 @@ const errorRoute = {
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
       cb(null, require('../pages/error'));
-    });
+    }, 'error');
   },
 };
 
@@ -82,5 +83,5 @@ const rootRoute = {
 ReactDOM.render((
   <Router history={hashHistory} routes={rootRoute} />
 ),
-  document.getElementById('App')
+  document.getElementById('App'),
 );
