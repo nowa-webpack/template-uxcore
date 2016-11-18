@@ -1,9 +1,9 @@
 // prompt for proj
 exports.prompts = [
   {
-    name: 'library',
+    name: 'libraries',
     type: 'confirm',
-    message: 'Generate a customized UI library?',
+    message: 'Generate a customized UI libraries?',
     default: false,
   },
   {

@@ -15,7 +15,7 @@
     "pages": <%= !SPA %>,
     "mockapi": {
       "/mock/query/getSomeInfo.json": "mock/query/getSomeInfo.js"
-    }<% if (library) { %>,
+    }<% if (libraries) { %>,
     "libraries": {
       "Uxcore": {
         "output": "uxcore.js",
