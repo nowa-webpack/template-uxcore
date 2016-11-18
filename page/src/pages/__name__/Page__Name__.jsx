@@ -46,5 +46,5 @@ class Page<%- Name %> extends React.Component {
 <% if(SPA){ %>
 export default ReactRouter.withRouter(Page<%- Name %>);
 <% } else {%>
-export default Page<%- Name %>;
+ReactDOM.render(<Page<%- Name %> />, document.getElementById('App'));
 <% } %>
