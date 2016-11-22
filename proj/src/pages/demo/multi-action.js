@@ -1,5 +1,6 @@
 import DB from '../../app/db';
 
+const { Reflux } = window;
 const updateState = Reflux.createAction({
   preEmit(params) {
     const { workNo } = params;
@@ -8,7 +9,7 @@ const updateState = Reflux.createAction({
     }
     return params;
   },
-  shouldEmit(params) {
+  shouldEmit( params ) {
     return true;
   },
 });

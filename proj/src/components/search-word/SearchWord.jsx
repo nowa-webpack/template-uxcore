@@ -1,12 +1,5 @@
-import PureRenderMixin from 'react-addons-pure-render-mixin';
-
 const { React } = window;
 class SearchWord extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
-  }
 
   render() {
     const { workNo } = this.props;
@@ -15,7 +8,7 @@ class SearchWord extends React.Component {
         {
           workNo ?
             (<div>
-              <label>检索词:</label>
+              <h3>检索词:</h3>
               <div>{workNo}</div>
             </div>) : null
         }

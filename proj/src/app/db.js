@@ -1,10 +1,11 @@
-import { urlPrefix } from './variables';
+import { urlPrefix, isDev } from './variables';
 
+const { nattyFetch } = window;
 // See https://github.com/Jias/natty-fetch for more details.
-const DBContext = new NattyDB.Context({
+const context = nattyFetch.context({
   mockUrlPrefix: urlPrefix,
   urlPrefix,
-  mock: __LOCAL__,
+  mock: isDev,
   // jsonp: true,
   withCredentials: false,
   traditional: true,
@@ -12,7 +13,7 @@ const DBContext = new NattyDB.Context({
     _tb_token_: '',
   },
   timeout: 5000,
-  fit (response) {
+  fit(response) {
     return {
       success: response.success,
       content: response.content,
@@ -25,7 +26,7 @@ const DBContext = new NattyDB.Context({
   },
 });
 
-DBContext.create('SomeModuleAPI', {
+context.create('SomeModuleAPI', {
   // 这里可以通过`abc.json`设置模拟数据
   getSomeInfo: {
     mockUrl: 'query/getSomeInfo.json',
@@ -33,4 +34,4 @@ DBContext.create('SomeModuleAPI', {
   },
 });
 
-export default DBContext;
+export default context.api;
