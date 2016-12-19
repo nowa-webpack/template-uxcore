@@ -1,7 +1,7 @@
+import { createActions } from 'reflux';
 import DB from '../../app/db';
 
-const { Reflux } = window;
-const Actions = Reflux.createActions({});
+const Actions = createActions({});
 
 
 export default Actions;

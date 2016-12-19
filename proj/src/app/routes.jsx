@@ -1,12 +1,16 @@
-import Menu from 'uxcore/lib/Menu';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Menu } from 'Uxcore';
 
-const { React, ReactRouter, ReactDOM } = window;
 // `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
-const { Router, Link, hashHistory } = ReactRouter;
+import { Router, Link, hashHistory } from 'react-router';
+import homeRoute from '../pages/home';
+import demoRoute from '../pages/demo';
+import errorRoute from '../pages/error';
 
 const App = ({ children, location, routes }) => (
   <div>
-    <Menu mode="horizontal" selectedKeys={routes[routes.length - 1].title}>
+    <Menu mode="horizontal" selectedKeys={[routes[routes.length - 1].title]}>
       <Menu.Item key="home">
         <Link to={'/home'} >首页</Link>
       </Menu.Item>
@@ -27,41 +31,6 @@ const App = ({ children, location, routes }) => (
   </div>
 );
 
-
-// 同样匹配`/users/123/portfolios/345`
-// `this.props.params`是`{userId: '123', portfolioId: 345}`
-// `this.props.routeParams`是`{userId: '123'}`
-const homeRoute = {
-  path: 'home',
-  // 这里可以给routes里面设置数据
-  title: 'home',
-  getComponent(nextState, cb) {
-    // `require.ensure`的第三个参数是给生成的模块命名
-    require.ensure([], (require) => {
-      cb(null, require('../pages/home'));
-    }, 'home');
-  },
-};
-
-const demoRoute = {
-  path: 'demo',
-  title: 'demo',
-  getComponent(nextState, cb) {
-    require.ensure([], (require) => {
-      cb(null, require('../pages/demo'));
-    }, 'demo');
-  },
-};
-
-const errorRoute = {
-  path: '*',
-  title: 'error',
-  getComponent(nextState, cb) {
-    require.ensure([], (require) => {
-      cb(null, require('../pages/error'));
-    }, 'error');
-  },
-};
 
 const rootRoute = {
   childRoutes: [{

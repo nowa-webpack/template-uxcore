@@ -1,6 +1,13 @@
-const { React } = window;
-class SearchWord extends React.Component {
+import { Component, PropTypes } from 'react';
 
+export default class SearchWord extends Component {
+  static defaultProps = {
+    workNo: 112497,
+  }
+
+  static propTypes = {
+    workNo: PropTypes.number,
+  }
   render() {
     const { workNo } = this.props;
     return (
@@ -16,14 +23,3 @@ class SearchWord extends React.Component {
     );
   }
 }
-
-
-SearchWord.defaultProps = {
-  workNo: '',
-};
-
-SearchWord.propTypes = {
-  workNo: React.PropTypes.number,
-};
-
-export default SearchWord;

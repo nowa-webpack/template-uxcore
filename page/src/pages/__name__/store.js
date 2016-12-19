@@ -1,7 +1,7 @@
+import { Store } from 'reflux';
 import Actions from './actions';
 
-const { Reflux } = window;
-export default class <%- Name %>Store extends Reflux.Store {
+export default class <%- Name %>Store extends Store {
   constructor() {
     super();
     this.listenables = Actions;
@@ -9,6 +9,6 @@ export default class <%- Name %>Store extends Reflux.Store {
   }
 
   static get id() {
-    return '<%- Name %>Store'
+    return '<%- Name %>Store';
   }
 }

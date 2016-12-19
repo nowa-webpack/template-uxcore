@@ -1,17 +1,22 @@
+import { Component } from 'react';
 <% if (i18n) { %>
 import i18n from 'i18n';
 <% } %>
 import './<%- Name %>.less';
 
-const { React } = window;
-class <%- Name %> extends React.Component {
+export default class <%- Name %> extends Component {
 
   constructor(props) {
     super(props);
   }
 
+  static defaultProps = {
+
+  }
+  static propTypes = {
+
+  }
   render() {
-    let me = this;
     return (
       <div className="mod-<%= name %>">
         component <%= name %>
@@ -19,14 +24,3 @@ class <%- Name %> extends React.Component {
     );
   }
 }
-
-
-<%- Name %>.defaultProps ={
-
-}
-
-<%- Name %>.propTypes = {
-  
-}
-
-export default <%- Name %>;

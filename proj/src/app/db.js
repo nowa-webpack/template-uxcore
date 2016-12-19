@@ -1,6 +1,6 @@
+import nattyFetch from 'natty-fetch';
 import { urlPrefix, isDev } from './variables';
 
-const { nattyFetch } = window;
 // See https://github.com/Jias/natty-fetch for more details.
 const context = nattyFetch.context({
   mockUrlPrefix: urlPrefix,

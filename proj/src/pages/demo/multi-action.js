@@ -1,7 +1,7 @@
+import { createAction } from 'reflux';
 import DB from '../../app/db';
 
-const { Reflux } = window;
-const updateState = Reflux.createAction({
+const updateState = createAction({
   preEmit(params) {
     const { workNo } = params;
     if (workNo) {
@@ -9,12 +9,12 @@ const updateState = Reflux.createAction({
     }
     return params;
   },
-  shouldEmit( params ) {
+  shouldEmit(params) {
     return true;
   },
 });
 
-const search = Reflux.createAction({
+const search = createAction({
   asyncResult: true,
 });
 

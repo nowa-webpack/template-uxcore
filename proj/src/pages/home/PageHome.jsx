@@ -1,15 +1,22 @@
+import { Component } from 'react';
+<% if (SPA) { %>
+import { withRouter } from 'react-router';
+<% } else { %>
+import ReactDOM from 'react-dom';
+<% } %>
+import { Table } from 'Uxcore';
+<% if (i18n) { %>
+import i18n from 'i18n';
+<% } %>
 import './PageHome.less';
 import { URLS } from '../../app/variables';
-
-const { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
-const Table = require('uxcore/lib/Table');
 
 // 如果有`Action`和`Store`那么就使用`Reflux.Component`
 // 这样可以用`Reflux`管理全部的`state`
 // 在这里面改变`state`是不会生效的
 // 否则，还是使用`React.Component`
 // 更多用法请看PageDemo.js文件
-class PageHome extends React.Component {
+class PageHome extends Component {
 
   render() {
     const renderCell = cellData => (<span>{cellData}</span>);
@@ -42,9 +49,8 @@ class PageHome extends React.Component {
 }
 
 <% if (SPA) { %>
-export default ReactRouter.withRouter(PageHome); 
+export default withRouter(PageHome);
 <% } else { %>
 ReactDOM.render(<PageHome />, document.getElementById('App'));
-export default PageHome; 
 <% } %>
 

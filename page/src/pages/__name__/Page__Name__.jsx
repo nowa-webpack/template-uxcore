@@ -1,14 +1,18 @@
+<% if (SPA) { %>
+import { withRouter } from 'react-router';
+<% } else { %>
+import ReactDOM from 'react-dom';
+<% } %>
 <% if (i18n) { %>
 import i18n from 'i18n';
 <% } %>
-import classnames from 'classnames';
-import './Page<%- Name %>.less';
 <% if (store) { %>
+import { Component } from 'reflux';
 import Actions from './actions';
 import Store from './store';
+import './Page<%- Name %>.less';
 
-const { Reflux, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %> } = window;
-class Page<%- Name %> extends Reflux.Component {
+class Page<%- Name %> extends Component {
 
   constructor(props) {
     super(props);
@@ -22,11 +26,13 @@ class Page<%- Name %> extends Reflux.Component {
       </div>
     );
   }
-
 }
+
 <% } else { %>
-const { React, <% if (SPA) { %>ReactRouter<% } else { %>ReactDOM<% } %>  } = window;
-class Page<%- Name %> extends React.Component {
+import { Component } from 'react';
+import './Page<%- Name %>.less';
+
+class Page<%- Name %> extends Component {
 
   constructor(props) {
     super(props);
@@ -41,10 +47,11 @@ class Page<%- Name %> extends React.Component {
     );
   }
 }
+
 <% } %>
 
 <% if(SPA){ %>
-export default ReactRouter.withRouter(Page<%- Name %>);
+export default withRouter(Page<%- Name %>);
 <% } else {%>
 ReactDOM.render(<Page<%- Name %> />, document.getElementById('App'));
 <% } %>

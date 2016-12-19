@@ -1,11 +1,13 @@
+import Reflux from 'reflux';
+import RefluxPromise from 'reflux-promise';
+import Promise from 'Promise';
 import './app.less';
 <% if (SPA) { %>
-import './routes.jsx';
+import './routes';
 <% } %>
 
-const { Reflux, Promise, chrome } = window;
-
-if (__LOCAL__ && chrome && chrome.webstore) { // This is a Chrome only hack
+// This is a Chrome only hack
+if (__LOCAL__ && window.chrome && chrome.webstore) { 
   // see https://github.com/livereload/livereload-extensions/issues/26
   setInterval(() => {
     document.body.focus();
@@ -13,4 +15,4 @@ if (__LOCAL__ && chrome && chrome.webstore) { // This is a Chrome only hack
 }
 
 // 数据流采用`Reflux`方案，具体文档请看 https://github.com/reflux/refluxjs
-Reflux.use(require("reflux-promise")(Promise));
+Reflux.use(RefluxPromise(Promise));

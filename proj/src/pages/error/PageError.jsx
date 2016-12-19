@@ -1,11 +1,12 @@
+import { Component } from 'react';
+import { withRouter } from 'react-router';
 import './PageError.less';
 
-const { React, ReactRouter } = window;
-class PageError extends React.Component {
+class PageError extends Component {
 
   componentDidMount() {
     const { router } = this.props;
-    setTimeout(() => { router.push('/home'); }, 5000);
+    this.timer = setTimeout(() => { router.push('/home'); }, 5000);
 
     /*
     // or with a location descriptor object
@@ -16,6 +17,12 @@ class PageError extends React.Component {
     })
     */
   }
+  componentWillUnmount() {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+  }
+
   render() {
     return (
       <div className="page-error">
@@ -25,4 +32,4 @@ class PageError extends React.Component {
   }
 }
 
-export default ReactRouter.withRouter(PageError);
+export default withRouter(PageError);
