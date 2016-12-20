@@ -21,7 +21,7 @@
       "Promise": "var Promise",
       "reflux": "var Reflux",
       "Uxcore": "var Uxcore",
-      "_": "var _"
+      "lodash": "var _"
     },
     "mockapi": {
       "/mock/query/getSomeInfo.json": "mock/query/getSomeInfo.js"
