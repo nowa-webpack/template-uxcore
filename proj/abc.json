@@ -20,7 +20,7 @@
       "react-router": "var ReactRouter",
       "Promise": "var Promise",
       "reflux": "var Reflux",
-      "Uxcore": "var Uxcore",
+      "uxcore": "var Uxcore",
       "lodash": "var _"
     },
     "mockapi": {

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 <% } else { %>
 import ReactDOM from 'react-dom';
 <% } %>
-import { Table } from 'Uxcore';
+import { Table } from 'uxcore';
 <% if (i18n) { %>
 import i18n from 'i18n';
 <% } %>

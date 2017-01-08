@@ -1,13 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Menu } from 'Uxcore';
-
-// `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
+import { cloneElement, addons } from 'react';
+import { render } from 'react-dom';
+import { Menu } from 'uxcore';
 import { Router, Link, hashHistory } from 'react-router';
+
 import homeRoute from '../pages/home';
 import demoRoute from '../pages/demo';
 import errorRoute from '../pages/error';
 
+const { CSSTransitionGroup } = addons;
+
+// `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
 const App = ({ children, location, routes }) => (
   <div>
     <Menu mode="horizontal" selectedKeys={[routes[routes.length - 1].title]}>
@@ -22,11 +24,11 @@ const App = ({ children, location, routes }) => (
       </Menu.Item>
     </Menu>
     <div className="kuma-container kuma-container-1180">
-      <React.addons.CSSTransitionGroup transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
-        {React.cloneElement(children || 'div', {
+      <CSSTransitionGroup transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
+        {cloneElement(children || 'div', {
           key: location.pathname,
         })}
-      </React.addons.CSSTransitionGroup>
+      </CSSTransitionGroup>
     </div>
   </div>
 );
@@ -49,7 +51,7 @@ const rootRoute = {
   }],
 };
 
-ReactDOM.render((
+render((
   <Router history={hashHistory} routes={rootRoute} />
 ),
   document.getElementById('App'),

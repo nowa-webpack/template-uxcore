@@ -8,7 +8,7 @@ import ReactDOM from 'react-dom';
 import i18n from 'i18n';
 <% } %>
 import './PageDemo.less';
-import Actions from './single-action';
+import Actions from './action';
 import Store from './store';
 import SearchWord from '../../components/search-word';
 import SearchData from '../../components/search-data';
