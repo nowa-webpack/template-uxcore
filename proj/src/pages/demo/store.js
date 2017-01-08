@@ -1,6 +1,7 @@
-import Actions from './single-action';
+import { Store } from 'reflux';
+import Actions from './actions';
 
-export default class DemoStore extends Reflux.Store {
+export default class DemoStore extends Store {
   constructor() {
     super();
     this.listenables = Actions;
