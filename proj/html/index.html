@@ -22,7 +22,7 @@
 <div id="App"></div>
 
 <!-- 项目脚本资源加载 -->
-<script src="/app<%= suffix %>.js"></script>
-<% if (!SPA) { %><script src="/home<%= suffix %>.js"></script><% } %>
+<script src="/app<% if (i18n) { %>-zh-cn<% } %>.js"></script>
+<% if (!SPA) { %><script src="/home<% if (i18n) { %>-zh-cn<% } %>.js"></script><% } %>
 </body>
 </html>
