@@ -1,3 +1,4 @@
+import React from 'react';
 import { Component } from 'reflux';
 <% if (SPA) { %>
 import { withRouter } from 'react-router';
@@ -7,11 +8,11 @@ import ReactDOM from 'react-dom';
 <% if (i18n) { %>
 import i18n from 'i18n';
 <% } %>
-import './PageDemo.less';
 import Actions from './actions';
 import Store from './store';
 import SearchWord from '../../components/search-word';
 import SearchData from '../../components/search-data';
+import './PageDemo.less';
 
 // 如果有`Action`和`Store`那么就使用`Reflux.Component`
 // 这样可以用`Reflux`管理全部的`state`
@@ -43,9 +44,8 @@ class PageDemo extends Component {
     );
   }
 }
-
 <% if (SPA) { %>
-export default withRouter(PageDemo); 
+export default withRouter(PageDemo);
 <% } else { %>
 ReactDOM.render(<PageDemo/>, document.getElementById('App'));
 <% } %>

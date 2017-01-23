@@ -14,9 +14,18 @@
   "homepage": "<%- homepage %>",
   "license": "MIT",
   "dependencies": {
-    "classnames": "~2.1.2",
+    "classnames": "^2.1.2",
     "i18n-helper": "~1.1.1",
+    "lie": "^3.1.0",
+    "lodash": "^4.17.4",
+    "natty-storage": "~1.1.2",
+    "natty-fetch": "~2.2.3",
+    "react": "^15.4.2",
+    "react-addons-css-transition-group": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
+    "reflux": "^5.0.4",
     "reflux-promise": "^1.0.4",
-    "uxcore": "~0.4.2"
+    "uxcore": "~0.5.2"
   }
 }

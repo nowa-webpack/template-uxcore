@@ -8,8 +8,6 @@ export default {
     }, 'demo');
   },
 };
-
-<%}else{%>
+<% } else { %>
 export default from './PageDemo.jsx';
-
 <% } %>

@@ -1,3 +1,5 @@
+import React, { PropTypes } from 'react';
+
 // 除了`class`的声明方式，你还可以函数式声明组件
 const SearchData = ({ data = [] }) => (
   <div className="mod-search-data">
@@ -14,7 +16,7 @@ const SearchData = ({ data = [] }) => (
 );
 
 SearchData.propTypes = {
-  data: React.PropTypes.array,
+  data: PropTypes.array,
 };
 
 export default SearchData;

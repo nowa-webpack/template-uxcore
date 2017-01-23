@@ -74,7 +74,7 @@ nowa build
 nowa init mod
 ```
 
-生成好之后可以在页面中 require 进去使用。
+生成好之后可以在页面中 import 进去使用。
 
 - 增加新页面
 
@@ -92,13 +92,13 @@ nowa
 
 - git 命令
 
-[Git发布操作流程和日常使用技巧](http://ux.alibaba.net/docs/git-publish.html)
+[Git发布操作流程和日常使用技巧](http://site.alibaba.net/nwdc/docs/web-publish.html)
 
 - 更多命令和参数（端口、代理、依赖库、国际化、热构建、https……）
 
 请查看 nowa 的官方文档：
 
-[https://www.npmjs.com/package/nowa](https://www.npmjs.com/package/nowa)
+[http://nowa-webpack.github.io/docs/](http://nowa-webpack.github.io/docs/)
 
 ## 页面引用资源列表
 
@@ -123,11 +123,11 @@ nowa
 
 ```
 {
-    "vars": {
-        "locale": "zh-cn",
-        "container": "nw",
-        "__LOCAL__": true
-    }
+  "vars": {
+    "locale": "zh-cn",
+    "container": "nw",
+    "__LOCAL__": true
+  }
 }
 ```
 
@@ -139,10 +139,10 @@ nowa
 
 ```
 {
-    "buildvars": {
-        "locale": [ "zh-cn", "en" ],
-        "container": [ "dingding", "nw" ]
-    }
+  "buildvars": {
+    "locale": [ "zh-cn", "en" ],
+    "container": [ "dingding", "nw" ]
+  }
 }
 ```
 
@@ -154,32 +154,14 @@ nowa
 
 > 当某个变量仅有一个候选值时，将不会添加文件后缀。
 
-## CSS约定
+## CSS 约定
 
 具体请参考[这里](http://gitlab.alibaba-inc.com/uxcore/uxcore-kuma/tree/master)。
-
-## 外部工具
-
-脚手架默认引入了以下外部工具库：
-
-| 类库 | 全局名称 |
-| ---- | ------ |
-| React | React |
-| Reflux | Reflux |
-| ReactDOM | ReactDOM |
-| Lodash | _ |
-| jQuery | $ |
-| NattyDB | NattyDB |
-
-> [React](http://reactjs.cn/) 和 [Refulx](https://github.com/reflux/refluxjs) 的使用，请参考各自的官方文档。
 
 ## Uxcore 模块
 
 Uxcore 组件库请参考[这里](http://uxco.re/)。
 
-### 定制 Uxcore
-
-可通过在 abc.json 中增加相应配置来定制项目所需的 Uxcore，详见 [组件库的定制构建](http://nowa-webpack.github.io/docs/zu_jian_ku_de_ding_zhi_gou_jian.html)。
 <% if (i18n) { %>
 ## 国际化解决方案
 
@@ -246,7 +228,7 @@ render() {
 
 ## 数据层和模拟数据解决方案
 
-- 请参考 [NattyDB 官方文档](http://jias.github.io/natty-db/)。
+- 请参考 [NattyFetch 官方文档](https://github.com/jias/natty-fetch)。
 
 ## 其他
 

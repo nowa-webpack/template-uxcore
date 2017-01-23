@@ -13,27 +13,20 @@
       "locale": [ "zh-cn", "en" ]<% } %>
     },
     "pages": <%= !SPA %>,
-    "externals": {
-      "natty-fetch": "var nattyFetch",
-      "react": "var React",
-      "react-dom": "var ReactDOM",
-      "react-router": "var ReactRouter",
-      "Promise": "var Promise",
-      "reflux": "var Reflux",
-      "uxcore": "var Uxcore",
-      "lodash": "var _"
-    },
+    "injects": [
+      "uxcore/assets/iconfont.css",
+      "uxcore/assets/orange.css",
+      "lie/dist/lie.polyfill",
+      "natty-storage/dist/natty-storage",
+      "natty-fetch/dist/natty-fetch.pc",
+      "react/dist/react-with-addons",
+      "react-dom/dist/react-dom",
+      "react-router/umd/ReactRouter",
+      "reflux/dist/reflux",
+      "uxcore"
+    ],
     "mockapi": {
       "/mock/query/getSomeInfo.json": "mock/query/getSomeInfo.js"
-    }<% if (libraries) { %>,
-    "libraries": {
-      "Uxcore": {
-        "output": "uxcore.js",
-        "mappings": {
-          "Table": "uxcore-table@~1.12.13",
-          "Menu": "uxcore-menu@~1.4.1"
-        }
-      }
-    }<% } %>
+    }
   }
 }

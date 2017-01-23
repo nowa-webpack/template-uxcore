@@ -1,13 +1,12 @@
-import { cloneElement, addons } from 'react';
+import React, { cloneElement } from 'react';
 import { render } from 'react-dom';
-import { Menu } from 'uxcore';
+import Menu from 'uxcore/lib/Menu';
 import { Router, Link, hashHistory } from 'react-router';
+import Transition from 'react-addons-css-transition-group';
 
 import homeRoute from '../pages/home';
 import demoRoute from '../pages/demo';
 import errorRoute from '../pages/error';
-
-const { CSSTransitionGroup } = addons;
 
 // `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
 const App = ({ children, location, routes }) => (
@@ -24,11 +23,11 @@ const App = ({ children, location, routes }) => (
       </Menu.Item>
     </Menu>
     <div className="kuma-container kuma-container-1180">
-      <CSSTransitionGroup transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
+      <Transition transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
         {cloneElement(children || 'div', {
           key: location.pathname,
         })}
-      </CSSTransitionGroup>
+      </Transition>
     </div>
   </div>
 );

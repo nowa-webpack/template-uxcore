@@ -1,12 +1,6 @@
 // prompt for proj
 exports.prompts = [
   {
-    name: 'libraries',
-    type: 'confirm',
-    message: 'Generate a customized UI libraries?',
-    default: false,
-  },
-  {
     name: 'SPA',
     type: 'confirm',
     message: 'Do you want SPA feature?'

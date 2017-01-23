@@ -8,6 +8,7 @@ exports.prompts = [{
 // answer for mod
 exports.answers = function(answers, abc) {
     answers.name = answers.name.toLowerCase();
+    answers.cssName = answers.name.replace(/\./g, '-');
     answers.Name = answers.name.replace(/[\W_]+(.)/g, function(p, p1) {
         return p1.toUpperCase();
     }).replace(/^./, function(p) {

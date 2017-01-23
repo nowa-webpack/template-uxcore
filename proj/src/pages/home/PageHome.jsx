@@ -1,15 +1,15 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 <% if (SPA) { %>
 import { withRouter } from 'react-router';
 <% } else { %>
 import ReactDOM from 'react-dom';
 <% } %>
-import { Table } from 'uxcore';
+import Table from 'uxcore/lib/Table';
 <% if (i18n) { %>
 import i18n from 'i18n';
 <% } %>
-import './PageHome.less';
 import { URLS } from '../../app/variables';
+import './PageHome.less';
 
 // 如果有`Action`和`Store`那么就使用`Reflux.Component`
 // 这样可以用`Reflux`管理全部的`state`
@@ -47,7 +47,6 @@ class PageHome extends Component {
     );
   }
 }
-
 <% if (SPA) { %>
 export default withRouter(PageHome);
 <% } else { %>
