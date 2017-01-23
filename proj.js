@@ -12,6 +12,12 @@ exports.prompts = [
   }
 ];
 
+// answer for mod
+exports.answers = function(answers, abc) {
+  answers.suffix = answers.i18n ? '-zh-cn' : '';
+  return answers;
+};
+
 exports.filter = function(source, data) {
   var flag = true;
   if(!data.SPA) {

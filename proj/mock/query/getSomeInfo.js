@@ -1,3 +1,6 @@
+/* eslint-disable */
+'use strict';
+
 function rand(str) {
   return str[Math.floor(Math.random() * str.length)];
 }
