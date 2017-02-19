@@ -13,6 +13,9 @@
       "locale": [ "zh-cn", "en" ]<% } %>
     },
     "pages": <%= !SPA %>,
+    "includes": [
+      "node_modules/uxcore/assets"
+    ],
     "injects": [
       "uxcore/assets/iconfont.css",
       "uxcore/assets/orange.css",
