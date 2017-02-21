@@ -1,6 +1,6 @@
 {
   "name": "nowa-template-uxcore",
-  "version": "3.0.2",
+  "version": "3.0.4",
   "description": "web project template using uxcore",
   "main": "mod.js",
   "scripts": {
