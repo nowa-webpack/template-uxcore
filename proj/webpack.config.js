@@ -29,5 +29,10 @@ module.exports = (config) => {
     ];
   } else {
     delete config.externals;
+    config.module.loaders.forEach((n) => {
+      if (/\.css/.test(n.test)) {
+        delete n.include;
+      }
+    });
   }
 };
