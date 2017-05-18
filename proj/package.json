@@ -19,8 +19,5 @@
     "natty-storage": "~2.0.2",
     "natty-fetch": "~2.4.2",
     "uxcore": "latest"
-  },
-  "devDependencies": {
-    "webpack": "^1.13.3"
   }
 }

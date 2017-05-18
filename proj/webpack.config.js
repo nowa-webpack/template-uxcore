@@ -1,8 +1,6 @@
 'use strict';
-var path = require('path');
-var webpack = require('webpack');
 
-module.exports = function (config) {
+module.exports = function (config, webpack) {
 
   config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
     name: 'app',
