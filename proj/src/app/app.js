@@ -1,4 +1,4 @@
-import { setup, LogicRender } from 'no-flux';
+import { setup, LogicRender } from 'refast';
 import Message from 'uxcore/lib/Message';
 import Dialog from 'uxcore/lib/Dialog';
 import EmptyData from 'uxcore/lib/EmptyData';

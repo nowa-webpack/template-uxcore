@@ -1,4 +1,4 @@
-import { Component, LogicRender } from 'no-flux';<% if (SPA) { %>
+import { Component, LogicRender } from 'refast';<% if (SPA) { %>
 import { withRouter } from 'react-router';<% } else { %>
 import { render } from 'react-dom';<% } %><% if (i18n) { %>
 import i18n from 'i18n';<% } %>

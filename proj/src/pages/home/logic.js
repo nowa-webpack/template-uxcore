@@ -13,7 +13,7 @@ export default {
   // 其第一个参数会被设置为 ctx,
   // 它原生带了 setState/getState/getProps 三个方法
   // 和用户定义的 fn
-  // fn 上挂在了在no-flux-conf.js中定义的 dialog 和 message、DB
+  // fn 上挂在了在app.js中定义的 dialog 和 message、DB
   updateState(ctx, data) {
     ctx.setState(data);
     // 如果返回 false，就不会执行下面的了

@@ -2,7 +2,7 @@
 exports.prompts = [{
   name: 'logic',
   type: 'confirm',
-  message: 'Use no-flux?'
+  message: 'Use refast flux?'
 }];
 
 // answer for mod
