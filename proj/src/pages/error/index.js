@@ -8,6 +8,8 @@ export default {
     }, 'error');
   },
 };
-<% } else { %>
+
+<%}else{%>
 export default from './PageError.jsx';
+
 <% } %>

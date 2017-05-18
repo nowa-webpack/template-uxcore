@@ -7,7 +7,5 @@ export default {
       cb(null, require('./PageHome.jsx'));
     }, 'home');
   },
-};
-<% } else { %>
-export default from './PageHome.jsx';
-<% } %>
+};<%}else{%>
+export default from './PageHome.jsx';<% } %>

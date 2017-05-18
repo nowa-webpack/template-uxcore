@@ -7,6 +7,6 @@ export default {
   isDev,
     // 这里放置全局的调用的URL
   URLS: {
-    getSomeInfo: `${urlPrefix}query/getSomeInfo.json`,
+    query: `${urlPrefix}query/query.json`,
   },
 };

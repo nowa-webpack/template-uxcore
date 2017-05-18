@@ -16,17 +16,16 @@
     "injects": [
       "uxcore/assets/iconfont.css",
       "uxcore/assets/orange.css",
-      "lie/dist/lie.polyfill",
-      "natty-storage/dist/natty-storage",
-      "natty-fetch/dist/natty-fetch.pc",
-      "react/dist/react-with-addons",
-      "react-dom/dist/react-dom",
-      "react-router/umd/ReactRouter",
-      "reflux/dist/reflux",
       "uxcore"
     ],
+    "alias": {
+      "components":"components",
+      "db":"app/db.js",
+      "variables":"app/variables.js"<% if (i18n) { %>,
+      "i18n": "i18n"<% } %>
+    },
     "mockapi": {
-      "/mock/query/getSomeInfo.json": "mock/query/getSomeInfo.js"
+      "/mock/user/query.json": "mock/user/query.js"
     }
   }
 }

@@ -1,11 +1,15 @@
+@import '~uxcore/assets/iconfont.css';
+@import '~uxcore/assets/orange.css';
+
 body {
   font-size: 14px;
   color: #333;
   background-color: #f7f7f7;
 }
 <% if (SPA) { %>
-/* 滚动条出现时不跳动 */
-/* 详见http://www.zhangxinxu.com/wordpress/2015/01/css-page-scrollbar-toggle-center-no-jumping/ */
+/*滚动条出现时不跳动*/
+/*详见http://www.zhangxinxu.com/wordpress/2015/01/css-page-scrollbar-toggle-center-no-jumping/*/
+
 html {
   overflow-y: scroll;
 }
@@ -23,7 +27,9 @@ body {
   width: 100vw;
   overflow: hidden;
 }
-/* 路由切换的样式 */
+
+
+/*路由切换的样式*/
 .route-enter {
   opacity: 0.01;
   transition: opacity .5s ease-in;
@@ -41,9 +47,9 @@ body {
 .route-leave.route-leave-active {
   opacity: 0;
 }
-
-
-.kuma-container {
-  background: #fff;
-}
 <% } %>
+.kuma-container {
+  @diff : 55px;
+  min-height: calc(~"100vh - @{diff}");
+}
+

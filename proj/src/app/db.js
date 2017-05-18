@@ -26,11 +26,11 @@ const context = nattyFetch.context({
   },
 });
 
-context.create('SomeModuleAPI', {
+context.create('User', {
   // 这里可以通过`abc.json`设置模拟数据
-  getSomeInfo: {
-    mockUrl: 'query/getSomeInfo.json',
-    url: 'query/getSomeInfo.json',
+  query: {
+    mockUrl: 'user/query.json',
+    url: 'user/query.json',
   },
 });
 

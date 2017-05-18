@@ -1,8 +1,8 @@
-import React, { cloneElement } from 'react';
-import { render } from 'react-dom';
+import { cloneElement } from 'react';
 import Menu from 'uxcore/lib/Menu';
-import { Router, Link, hashHistory } from 'react-router';
-import Transition from 'react-addons-css-transition-group';
+
+// `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
+import { Router, hashHistory, Link } from 'react-router';
 
 import homeRoute from '../pages/home';
 import demoRoute from '../pages/demo';
@@ -23,11 +23,9 @@ const App = ({ children, location, routes }) => (
       </Menu.Item>
     </Menu>
     <div className="kuma-container kuma-container-1180">
-      <Transition transitionName="route" transitionEnterTimeout={500} transitionLeaveTimeout={100}>
-        {cloneElement(children || 'div', {
-          key: location.pathname,
-        })}
-      </Transition>
+      {cloneElement(children || 'div', {
+        key: location.pathname,
+      })}
     </div>
   </div>
 );
@@ -50,8 +48,8 @@ const rootRoute = {
   }],
 };
 
-render((
-  <Router history={hashHistory} routes={rootRoute} />
-),
-  document.getElementById('App'),
-);
+
+export default {
+  history: hashHistory,
+  Routes: (<Router history={hashHistory} routes={rootRoute} />),
+};

@@ -7,7 +7,5 @@ export default {
       cb(null, require('./PageDemo.jsx'));
     }, 'demo');
   },
-};
-<% } else { %>
-export default from './PageDemo.jsx';
-<% } %>
+};<%}else{%>
+export default from './PageDemo.jsx';<% } %>

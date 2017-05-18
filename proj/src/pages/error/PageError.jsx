@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { withRouter } from 'react-router';
 import './PageError.less';
 
-class PageError extends Component {
+export default withRouter(class PageError extends Component {
 
   componentDidMount() {
     const { router } = this.props;
@@ -30,6 +30,4 @@ class PageError extends Component {
       </div>
     );
   }
-}
-
-export default withRouter(PageError);
+});
