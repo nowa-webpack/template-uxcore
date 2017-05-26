@@ -4,7 +4,11 @@ import Promise from 'Promise';
 import './app.less';
 <% if (SPA) { %>
 import './routes';
-<% } %>
+
+// Define webpack publicPath at runtime
+__webpack_public_path__ = ((s) => (
+  s[s.length - 1].src.replace(/\/[^\/]+$/, '/')
+))(document.getElementsByTagName('script'));<% } %>
 
 // This is a Chrome only hack
 if (__LOCAL__ && window.chrome && chrome.webstore) { 
