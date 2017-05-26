@@ -8,6 +8,11 @@ import homeRoute from '../pages/home';
 import demoRoute from '../pages/demo';
 import errorRoute from '../pages/error';
 
+// Define webpack publicPath at runtime
+__webpack_public_path__ = ((s) => (
+  s[s.length - 1].src.replace(/\/[^\/]+$/, '/')
+))(document.getElementsByTagName('script'));
+
 // `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
 const App = ({ children, location, routes }) => (
   <div>
