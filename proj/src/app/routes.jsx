@@ -35,7 +35,6 @@ const App = ({ children, location, routes }) => (
   </div>
 );
 
-
 const rootRoute = {
   childRoutes: [{
     path: '/',
@@ -52,7 +51,6 @@ const rootRoute = {
     ],
   }],
 };
-
 
 export default {
   history: hashHistory,

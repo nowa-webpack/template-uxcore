@@ -5,7 +5,6 @@
  * - 页面所属资源：pageName.xxx
  */
 
-
 module.exports = {
   'page1.demo': '演示',
 };

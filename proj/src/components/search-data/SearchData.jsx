@@ -1,4 +1,3 @@
-// 除了`class`的声明方式，你还可以函数式声明组件
 export default ({ data = [] }) => {
   let jsx = null;
   if (data.length) {

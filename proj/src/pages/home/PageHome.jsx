@@ -5,22 +5,17 @@ import i18n from 'i18n';<% } %>
 import SearchWord from 'components/search-word';
 import SearchData from 'components/search-data';
 import './PageHome.less';
-import logic from './logic';
+import * as logic from './logic';
 
 class PageHome extends Component {
 
   constructor(props) {
     super(props, logic);
     this.handleChange = this.handleChange.bind(this);
-    this.updateAndSearch = this.updateAndSearch.bind(this);
   }
 
   handleChange(e) {
-    this.updateAndSearch({ workNo: e.target.value });
-  }
-
-  updateAndSearch(val) {
-    this.execute(['updateState', 'search'], val);
+    this.dispatch(['updateState', 'search'], { workNo: e.target.value });
   }
 
   render() {
@@ -43,5 +38,3 @@ class PageHome extends Component {
 }<% if (SPA) { %>
 export default withRouter(PageHome);<% } else { %>
 render(<PageHome />, document.getElementById('App'));<% } %>
-
-

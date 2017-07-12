@@ -1,4 +1,4 @@
-import { setup, LogicRender } from 'refast';
+import Refast, { LogicRender } from 'refast';
 import Message from 'uxcore/lib/Message';
 import Dialog from 'uxcore/lib/Dialog';
 import EmptyData from 'uxcore/lib/EmptyData';
@@ -17,8 +17,8 @@ if (isDev && window.chrome && window.chrome.webstore) {
   }, 200);
 }
 
-// 这里使用setup来配置noflux
-setup('fn', {
+// Refast 文档请看 https://recore.github.io/refast-docs/
+Refast.use('fn', {
   message: Message,
   dialog: Dialog,
   DB,<% if (SPA) { %>

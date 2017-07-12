@@ -5,7 +5,7 @@ import i18n from 'i18n';<% } %>
 import SearchWord from 'components/search-word';
 import SearchData from 'components/search-data';
 import './PageDemo.less';
-import logic from './logic';
+import * as logic from './logic';
 
 class PageDemo extends Component {
 
@@ -15,7 +15,7 @@ class PageDemo extends Component {
   }
 
   handleChange(e) {
-    this.execute('updateState', { workNo: e.target.value });
+    this.dispatch('updateState', { workNo: e.target.value });
   }
 
   render() {

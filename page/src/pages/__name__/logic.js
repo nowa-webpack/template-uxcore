@@ -1,7 +1,5 @@
-export default {
-  defaults(props) {
-    return {
-      
-    };
-  },
+export default function defaults(props) {
+  return {
+
+  };
 }
