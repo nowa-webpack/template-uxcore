@@ -8,4 +8,8 @@ export default {
     }, '<%- name %>');
   },
 };<%}else{%>
-export default from './Page<%- Name %>.jsx';<% } %>
+import <%- Name %> from './<%- Name %>';
+
+export default <%- Name %>;
+
+<% } %>

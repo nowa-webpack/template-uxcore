@@ -1,1 +1,3 @@
-export default from './SearchWord.jsx';
+import SearchWord from './SearchWord';
+
+export default SearchWord;

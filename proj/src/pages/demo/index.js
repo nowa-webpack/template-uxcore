@@ -8,4 +8,8 @@ export default {
     }, 'demo');
   },
 };<%}else{%>
-export default from './PageDemo.jsx';<% } %>
+import PageDemo from './PageDemo';
+
+export default PageDemo;
+
+<% } %>

@@ -8,4 +8,8 @@ export default {
     }, 'home');
   },
 };<%}else{%>
-export default from './PageHome.jsx';<% } %>
+import PageHome from './PageHome';
+
+export default PageHome;
+
+<% } %>

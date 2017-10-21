@@ -10,6 +10,8 @@ export default {
 };
 
 <%}else{%>
-export default from './PageError.jsx';
+import PageError from './PageError';
+
+export default PageError;
 
 <% } %>

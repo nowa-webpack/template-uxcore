@@ -1,1 +1,3 @@
-export default from './SearchData.jsx';
+import SearchData from './SearchData';
+
+export default SearchData;
