@@ -1,4 +1,4 @@
-import <%- Name %> from './<%- Name %>.jsx';
+import <%- Name %> from './<%- Name %>';
 
 export default <%- Name %>;
 

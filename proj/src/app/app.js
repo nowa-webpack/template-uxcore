@@ -6,7 +6,7 @@ import { assign } from 'lodash';
 import { isDev } from 'variables';
 import DB from 'db';<% if (SPA) { %>
 import { render } from 'react-dom';
-import { Routes, history } from './routes.jsx';<% } %>
+import { Routes, history } from './routes';<% } %>
 import './app.less';
 
 // This is a Chrome only hack

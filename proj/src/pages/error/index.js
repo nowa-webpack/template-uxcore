@@ -4,7 +4,7 @@ export default {
   title: 'error',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./PageError.jsx'));
+      cb(null, require('./PageError'));
     }, 'error');
   },
 };

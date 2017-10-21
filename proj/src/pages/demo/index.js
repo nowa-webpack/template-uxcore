@@ -4,7 +4,7 @@ export default {
   title: 'demo',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-      cb(null, require('./PageDemo.jsx'));
+      cb(null, require('./PageDemo'));
     }, 'demo');
   },
 };<%}else{%>
