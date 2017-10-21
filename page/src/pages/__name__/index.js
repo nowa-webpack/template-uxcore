@@ -8,8 +8,8 @@ export default {
     }, '<%- name %>');
   },
 };<%}else{%>
-import <%- Name %> from './<%- Name %>';
+import Page<%- Name %> from './Page<%- Name %>';
 
-export default <%- Name %>;
+export default Page<%- Name %>;
 
 <% } %>
