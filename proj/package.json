@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {<% if (i18n) { %>
     "i18n-helper": "~1.1.1",<% } %>
-    "refast": "latest",
+    "refast": "~1.2.3",
     "natty-storage": "~2.0.2",
     "natty-fetch": "~2.4.2",
     "uxcore": "latest"
