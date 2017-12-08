@@ -1,5 +1,5 @@
 import { cloneElement } from 'react';
-import Menu from 'uxcore/lib/Menu';
+import { Menu } from 'uxcore';
 
 // `ReactRouter`文档请看  https://github.com/ReactTraining/react-router/tree/v2.8.1
 import { Router, hashHistory, Link } from 'react-router';

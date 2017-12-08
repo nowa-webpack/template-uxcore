@@ -1,7 +1,5 @@
 import Refast, { LogicRender } from 'refast';
-import Message from 'uxcore/lib/Message';
-import Dialog from 'uxcore/lib/Dialog';
-import EmptyData from 'uxcore/lib/EmptyData';
+import { Message, Dialog, EmptyData } from 'uxcore';
 import { assign } from 'lodash';
 import { isDev } from 'variables';
 import DB from 'db';<% if (SPA) { %>
