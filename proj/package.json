@@ -18,7 +18,7 @@
     "refast": "~1.2.3",
     "natty-storage": "~2.0.2",
     "natty-fetch": "~2.4.2",
-    "uxcore": "~0.15.18"
+    "uxcore": "~0.19.0"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.6.2"
