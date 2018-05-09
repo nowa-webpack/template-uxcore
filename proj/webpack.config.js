@@ -11,7 +11,7 @@ module.exports = function (config, webpack) {
   }];
   if (process.argv[2] === 'server') { // 如果需要线上代理调试。请将此判断改为 false && process.argv[2] === 'server'
     config.externals.push((context, request, callback, matches) => {
-      if (/uxcore\/assets\//.test(request)) {
+      if (/[^-]uxcore\/assets\//.test(request)) {
         callback(null, '0');
       } else if (matches = /^uxcore$/.exec(request)) {
         callback(null, `window.Uxcore`);
